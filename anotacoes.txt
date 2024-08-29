@@ -1,0 +1,9 @@
+Declaração de variável = var ???? || Não é mais usado
+Declaração de variável = let ???? e const ???? || Let
+
+toUpperCase() = Letras tudo em maiusculo
+toLowerCase() = Letras tudo em minusculo
+
+console.log(nomes.split(",")) = ele irá separar a string em elementos diferentes a cada , que ele encontrar
+
+console.log(typeof variavel) = checar o tipo de uma variável (string, int, etc)
