@@ -7,3 +7,111 @@ toLowerCase() = Letras tudo em minusculo
 console.log(nomes.split(",")) = ele irá separar a string em elementos diferentes a cada , que ele encontrar
 
 console.log(typeof variavel) = checar o tipo de uma variável (string, int, etc)
+
+LISTA
+
+names.push("????") // Insere no final da lista 'names'
+names.unshift("????") // Insere no começo da lista 'names'
+names.shift() // Remove o primeiro item da lista 'names'
+names.pop() // Remove o ultimo item da lista 'names'
+names[indice] = "????" // Substiuir o item do indice por outra coisa
+names.indexOf("????") // Verifica qual o indice do item '????'
+names.sort() // Ordena os itens da lista 'names' em ordem alfabética
+names.length // Mostra quantos itens a lista 'names' possui
+const namesIsArray = Array.isArray(names) // Verifica se o 'names' é um array, retornando true se sim e false pra nao
+console.log(namesIsArray)
+
+SITE = MDN ARRAY
+
+
+
+EXEMPLO DE MAP() =
+const numbers = [1, 2, 3, 4, 5] // cria array 'numbers'
+
+console.log(numbers) / [1, 2, 3, 4, 5]
+
+const numbersMultipliedByTwo = numbers.map(function(number) {
+    return number * 2;
+}) // o map faz uma varredura pela lista numbers criando uma função para multiplicar por 2 cada item 
+
+console.log(numbersMultipliedByTwo) // [2, 4, 6, 8, 10]
+
+
+
+EXEMPLO DE FILTER() = 
+const letras = ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef'] // cria array 'letras'
+
+console.log(letras) // ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef']
+
+const letrasFilter = letras.filter(function(letras) {
+    return letras.length > 3;
+}) // O filter faz uma varredura pela lista letras criando uma função para verificar todos itens da lista que possuem mais de 3 caracteres
+
+console.log(letrasFilter) // ['abcd', 'abcde', 'abcdef']
+
+
+
+EXEMPLOS DE FILTER2() = 
+const idades = [9, 12, 92, 13, 4, 14]
+
+console.log(idades)
+
+const idadesPar = idades.filter(function(idade){
+    return idade % 2 == 0;
+})
+
+console.log(idadesPar) // VERIFICA NUMEROS PARES DA LISTA IDADES
+
+
+
+EXEMPLO DE REDUCE() =
+const idades = [9, 12, 92, 13, 4, 14] // Cria array 
+
+const somaIdades = idades.reduce(function(idade, acumulador) {
+    return acumulador + idade;
+}, 0) // A função faz uma varredura pela lista tendo como intenção reduzir toda a lista em apenas um item, que seria a soma de todos itens, a idade será cada item da lista quando for varrido, acumulador é onde armazenará o valor da soma de cada item até sobrar apenas um item, o 0 indica que o acumulador começará com valor 0
+
+console.log(somaIdades) // 144
+
+
+
+
+
+// Objeto 
+const person = {
+    firstName: "João",
+    lastName: "Pedro",
+    age: 21, 
+    hobbies: ["Estudar", "Trabalhar", "Comer"]
+}
+
+const nome = person.firstName
+const sobrenome = person.lastName
+
+console.log(nome)
+console.log(sobrenome)
+
+
+
+// ARQUIVOS JSON
+const todos = [
+    {
+        id: 1,
+        description: "Estudar",
+        isCompleted: false,
+    },
+    {
+        id: 2,
+        description: "Comer",
+        isCompleted: true,
+    },
+    {
+        id: 3,
+        description: "Treinar",
+        isCompleted: true,
+    }
+]
+
+const todosJSON = JSON.stringify(todos); // Converte a lista 'todos' para um arquivo JSON para poder ser manipulado em APIs, string em formato JSON // Cliente para servidor
+
+const todosList = JSON.parse(todosJSON); // Converte a string que está em formato JSON para a forma original de lista // Servidor para ler
